@@ -1,0 +1,27 @@
+# Core LangChain agent framework and LCEL/Runnables
+langchain
+langchain-core
+langchain-openai
+langgraph
+
+# Tavily web-search integration
+langchain-tavily
+tavily-python
+
+# Web-page fetching and HTML parsing for the BeautifulSoup tool
+beautifulsoup4
+lxml
+httpx
+requests
+
+# Environment variables and API-key loading
+python-dotenv
+
+# Token counting, validation, retries, and async file support
+tiktoken
+pydantic
+tenacity
+aiofiles
+
+# Development and notebook support
+ipykernel
