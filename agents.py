@@ -8,11 +8,23 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+import streamlit as st
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
 mistral_api_key = os.getenv("MISTRAL_API_KEY")
 
 if not mistral_api_key:
+    try:
+        mistral_api_key = st.secrets["MISTRAL_API_KEY"]
+    except Exception:
+        pass
+
+if not mistral_api_key:
     raise ValueError(
-        "MISTRAL_API_KEY is missing. Add it to your .env file."
+        "MISTRAL_API_KEY is missing. Add it to .env locally or Streamlit Secrets."
     )
 llm = ChatMistralAI(
     model="mistral-small-latest",
